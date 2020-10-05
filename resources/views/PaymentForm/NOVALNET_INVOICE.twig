@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{plugin_path('Novalnet')}}/css/novalnet_ui.css"> 
+<script defer src="{{plugin_path('Novalnet')}}/js/novalnet_guarantee_payment.js"></script>
+
+<form method="post" id="novalnet_form" name="novalnet_form" action="{{nnPaymentProcessUrl}}">
+	<div class="modal-header"> 
+		<h4 class="modal-title">{{paymentName}} </h4>
+		<button type="button" aria-label="Close" data-dismiss="modal" class="close" onClick="window.location.reload();">
+			<span aria-hidden="true">x</span>
+		</button> 
+		
+	</div>
+	
+	<div class="modal-body">
+		<div class="modal-title" style="color:#008EBF;"><b>{{trans("Novalnet::PaymentMethod.note")}}</b> {{ trans("Novalnet::PaymentMethod.dobshowingreason") }}</div><br>
+		<fieldset>		
+				<input type="hidden" id="paymentKey" name="paymentKey" value="{{paymentMopKey}}" />
+				
+				</div> 
+					
+		</fieldset>
+	</div>
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary" id="novalnet_form_btn" onclick="">
+			<i class="fa fa-check" aria-hidden="true"> </i>
+			{{ trans("Novalnet::PaymentMethod.submit_button_text") }}
+		</button>
+	</div>
+</form>
+
